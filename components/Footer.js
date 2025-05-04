@@ -97,7 +97,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-col items-center md:items-start"
           >
-            <h3 className="text-lg font-medium text-white mb-4">Let's Connect</h3>
+            <h3 className="text-lg font-medium text-white mb-4">Let&apos;s Connect</h3>
             <div className="flex gap-4 text-2xl">
               {socialLinks.map((link, index) => (
                 <motion.a

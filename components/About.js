@@ -70,12 +70,12 @@ export default function About() {
               transition={{ delay: 0.3 }}
             >
               <p>
-                Hello! I'm <span className="text-blue-400 font-medium">Shahana</span>, a passionate MERN stack developer with a background in Electronics Engineering. My journey into tech began with curiosity and has evolved into a deep love for building meaningful digital solutions.
+                Hello! I&apos;m <span className="text-blue-400 font-medium">Shahana</span>, a passionate MERN stack developer with a background in Electronics Engineering. My journey into tech began with curiosity and has evolved into a deep love for building meaningful digital solutions.
               </p>
               
               <div className="relative pl-6 border-l-2 border-blue-500/50 my-6">
                 <p className="italic text-gray-200">
-                  "What began as curiosity about web development became a passion for creating digital experiences that solve real problems."
+                  &quot;What began as curiosity about web development became a passion for creating digital experiences that solve real problems.&quot;
                 </p>
               </div>
               

@@ -21,7 +21,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Let's Connect
+              Let&apos;s Connect
             </motion.h2>
             
             <motion.p 
@@ -31,7 +31,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Have a project in mind or want to collaborate? I'd love to hear from you!
+              Have a project in mind or want to collaborate? I&apos;d love to hear from you!
             </motion.p>
           </div>
           
@@ -157,9 +157,6 @@ export default function Contact() {
               </motion.div>
             </div>
           </motion.form>
-
-          {/* Additional Contact Info */}
-          
         </motion.div>
       </div>
     </section>

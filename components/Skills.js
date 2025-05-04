@@ -83,7 +83,7 @@ export default function Skills() {
             My Tech Stack
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Technologies I've worked with and my proficiency level in each
+            Technologies I&apos;ve worked with and my proficiency level in each
           </p>
         </motion.div>
         
