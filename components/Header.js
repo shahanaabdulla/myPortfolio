@@ -1,8 +1,12 @@
+'use client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiMenu, FiX } from 'react-icons/fi';
+import { useState } from 'react';
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '#projects' },
@@ -12,12 +16,11 @@ export default function Header() {
 
   const socialIcons = [
     { icon: <FiGithub size={18} />, path: 'https://github.com', name: 'GitHub' },
-    { icon: <FiLinkedin size={18} />, path: 'https://linkedin.com', name: 'LinkedIn' },
-   
+    { icon: <FiLinkedin size={18} />, path: 'https://linkedin.com', name: 'LinkedIn' }
   ];
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -25,7 +28,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         {/* Logo */}
-        <motion.div 
+        <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="flex items-center gap-2"
@@ -37,9 +40,9 @@ export default function Header() {
             MERN Dev
           </span>
         </motion.div>
-        
+
         <div className="flex items-center gap-6">
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
               {navItems.map((item, i) => (
@@ -68,7 +71,7 @@ export default function Header() {
           </nav>
 
           {/* Social Icons */}
-          <motion.div 
+          <motion.div
             className="hidden md:flex items-center gap-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -110,14 +113,52 @@ export default function Header() {
             </Link>
           </motion.div>
 
-          {/* Mobile menu button (placeholder) */}
-          <button className="md:hidden text-gray-400 hover:text-white">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          {/* Mobile menu toggle button */}
+          <button
+            className="md:hidden text-gray-400 hover:text-white"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <motion.div
+          className="md:hidden bg-black/80 px-6 py-4 backdrop-blur-sm border-t border-gray-700"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ul className="flex flex-col gap-4">
+            {navItems.map((item) => (
+              <li key={item.path}>
+                <Link
+                  href={item.path}
+                  className="block text-gray-300 hover:text-white transition"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="flex gap-4 mt-4">
+            {socialIcons.map((social) => (
+              <a
+                key={social.name}
+                href={social.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+        </motion.div>
+      )}
     </motion.header>
   );
 }
