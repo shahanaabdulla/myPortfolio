@@ -18,7 +18,7 @@ const socialLinks = [
   },
   { 
     name: 'Email', 
-    url: 'mailto:shahanamuhammedvava@gmail.com', 
+    url: 'mailto:shahanaabdullavv@gmail.com', 
     icon: <FaEnvelope />,
     color: 'hover:text-red-400'
   }

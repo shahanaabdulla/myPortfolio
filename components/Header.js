@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiMenu, FiX } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiMenu, FiX } from 'react-icons/fi';
 import { useState } from 'react';
 
 export default function Header() {
@@ -15,8 +15,8 @@ export default function Header() {
   ];
 
   const socialIcons = [
-    { icon: <FiGithub size={18} />, path: 'https://github.com', name: 'GitHub' },
-    { icon: <FiLinkedin size={18} />, path: 'https://linkedin.com', name: 'LinkedIn' }
+    { icon: <FiGithub size={18} />, path: 'https://github.com/shahanaabdulla', name: 'GitHub' },
+    { icon: <FiLinkedin size={18} />, path: 'https://www.linkedin.com/in/shahanavv/', name: 'LinkedIn' }
   ];
 
   return (
